@@ -5,10 +5,10 @@ import { Card } from "react-native-paper";
 import { SvgXml } from "react-native-svg";
 import star from "../../../../assets/star";
 import open from "../../../../assets/open";
+import { Spacer } from "../../../components/spacer/spacer.component";
 
 const Title = styled(Text)`
   font-family: ${(props) => props.theme.fonts.heading};
-
   color: ${(props) => props.theme.colors.ui.primary};
   font-size: ${(props) => props.theme.fontSizes.body};
 `;
@@ -50,6 +50,13 @@ const Section = styled(View)`
   flex-direction: row;
   align-items: center;
 `;
+const PadLeftSpacer = styled(View)`
+  padding-left: ${(props) => props.theme.space[3]};
+`;
+
+const TemporarilyClosed = styled(Text)`
+  color: red;
+`;
 
 export const RestaurantInfoCard = ({ restaurant = {} }) => {
   const {
@@ -79,13 +86,11 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
           </Rating>
           <SectionEnd>
             {isClosedTemporarily && (
-              <Text variant="label" style={{ color: "red" }}>
-                CLOSED TEMPORARILY
-              </Text>
+              <TemporarilyClosed>CLOSED TEMPORARILY</TemporarilyClosed>
             )}
-            <View style={{ paddingLeft: 16 }} />
-            {isOpenNow && <SvgXml xml={open} width={20} height={20} />}
-            <View style={{ paddingLeft: 16 }} />
+            <Spacer variant="left.large" />
+            {isOpenNow && <Open xml={open} width={20} height={20} />}
+            <Spacer variant="left.large" />
             <Image style={{ width: 15, height: 15 }} source={{ uri: icon }} />
           </SectionEnd>
         </Section>

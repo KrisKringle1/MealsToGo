@@ -1,53 +1,18 @@
 import React from "react";
-import styled from "styled-components/native";
-import { View, Image } from "react-native";
-import { Card } from "react-native-paper";
 import { SvgXml } from "react-native-svg";
 import star from "../../../../assets/star";
 import open from "../../../../assets/open";
 import { Spacer } from "../../../components/spacer/spacer.component";
 import { Text } from "../../../components/typography/text.component";
-
-const RestaurantCard = styled(Card)`
-  background-color: ${(props) => props.theme.colors.bg.primary};
-`;
-
-const RestaurantCardCover = styled(Card.Cover)`
-  background-color: ${(props) => props.theme.colors.bg.primary};
-  padding: ${(props) => props.theme.space[3]};
-`;
-
-const Info = styled(View)`
-  padding: ${(props) => props.theme.space[3]};
-`;
-
-const Rating = styled(View)`
-  flex-direction: row;
-  padding-top: ${(props) => props.theme.space[2]};
-  padding-bottom: ${(props) => props.theme.space[2]};
-`;
-
-const Address = styled(Text)`
-  font-family: ${(props) => props.theme.fonts.body};
-  font-size: ${(props) => props.theme.fontSizes.caption};
-`;
-
-const Open = styled(SvgXml)`
-  flex-direction: row;
-`;
-const SectionEnd = styled(View)`
-  flex: 1;
-  flex-direction: row;
-  justify-content: flex-end;
-`;
-
-const Section = styled(View)`
-  flex-direction: row;
-  align-items: center;
-`;
-const PadLeftSpacer = styled(View)`
-  padding-left: ${(props) => props.theme.space[3]};
-`;
+import { RestaurantCard } from "./restaurant-info-card.styles";
+import { RestaurantCardCover } from "./restaurant-info-card.styles";
+import { Info } from "./restaurant-info-card.styles";
+import { Rating } from "./restaurant-info-card.styles";
+import { Address } from "./restaurant-info-card.styles";
+import { Open } from "./restaurant-info-card.styles";
+import { SectionEnd } from "./restaurant-info-card.styles";
+import { Section } from "./restaurant-info-card.styles";
+import { Icon } from "./restaurant-info-card.styles";
 
 export const RestaurantInfoCard = ({ restaurant = {} }) => {
   const {
@@ -83,7 +48,7 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
               {isOpenNow && <Open xml={open} width={20} height={20} />}
             </Spacer>
             <Spacer position="left" size="large">
-              <Image style={{ width: 15, height: 15 }} source={{ uri: icon }} />
+              <Icon source={{ uri: icon }} />
             </Spacer>
           </SectionEnd>
         </Section>

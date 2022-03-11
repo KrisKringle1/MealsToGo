@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
-import { Searchbar, Colors } from "react-native-paper";
+import { Searchbar } from "react-native-paper";
 import { SearchContainer } from "../screens/restraunts.screen.styles";
 import { LocationContext } from "../../../services/location/location.context";
 
@@ -8,7 +8,6 @@ export const Search = () => {
   const [searchKeyword, setSearchKeyword] = useState("");
   const onChangeSearch = (query) => setSearchKeyword(query);
   useEffect(() => {
-    console.log("iran");
     search(searchKeyword);
   }, []);
 

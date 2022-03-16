@@ -19,7 +19,6 @@ export const MapScreen = ({ navigation }) => {
   const [latDelta, setLatDelta] = useState(0);
 
   const { viewport, lat, lng } = location;
-  console.log("view", viewport);
 
   useEffect(() => {
     const northeastLat = viewport.northeast.lat;

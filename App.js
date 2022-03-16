@@ -1,4 +1,5 @@
 import React from "react";
+// v9 compat packages are API compatible with v8 code
 import { initializeApp } from "firebase/app";
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
 import { ThemeProvider } from "styled-components/native";
@@ -31,23 +32,18 @@ export default function App() {
   // https://firebase.google.com/docs/web/setup#available-libraries
 
   // Your web app's Firebase configuration
+  // Your web app's Firebase configuration
   const firebaseConfig = {
     apiKey: "AIzaSyCqIWZAAozAKbgrhHwYL0intaCeLv982e0",
     authDomain: "mealstogo-f128b.firebaseapp.com",
     projectId: "mealstogo-f128b",
     storageBucket: "mealstogo-f128b.appspot.com",
     messagingSenderId: "108671706316",
-    appId: "1:108671706316:web:efc14aaef12ac1fa97ce69",
+    appId: "1:108671706316:web:d9ca61134760d3bb97ce69",
   };
 
   // Initialize Firebase
-  let app;
-
-  if (firebase.apps.length === 0) {
-    app = firebase.initializeApp(firebaseConfig);
-  } else {
-    app = firebase.app();
-  }
+  const app = initializeApp(firebaseConfig);
 
   return (
     <>

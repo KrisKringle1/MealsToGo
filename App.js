@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 // v9 compat packages are API compatible with v8 code
 import { initializeApp } from "firebase/app";
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
@@ -14,6 +14,10 @@ import {
 } from "@expo-google-fonts/oswald";
 import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
 export default function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  useEffect(() => {});
+
   const [oswaldLoaded] = useOswald({
     Oswald_400Regular,
   });

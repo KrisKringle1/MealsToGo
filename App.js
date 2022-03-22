@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 // v9 compat packages are API compatible with v8 code
 import { initializeApp } from "firebase/app";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
 import { ThemeProvider } from "styled-components/native";

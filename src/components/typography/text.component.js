@@ -22,7 +22,7 @@ const caption = (theme) => `
     font-weight: ${theme.fontWeights.bold};
 `;
 const label = (theme) => `
-    font-family: ${theme.fontSizes.caption};
+    font-family: ${theme.fonts.caption};
     font-size: ${theme.fontSizes.body};
     font-weight: ${theme.fontWeights.medium};
 `;

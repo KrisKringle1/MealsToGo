@@ -10,6 +10,7 @@ import { LoadingContainer } from "./restraunts.screen.styles";
 import { Search } from "../components/search.component";
 import { FavoritesBar } from "../../../components/favorites/favorites-bar.component";
 import { FavoritesContext } from "../../../services/favorites/favorites.context";
+import { FadeInView } from "../../../components/animations/fade.animation";
 
 export const RestaurantsScreen = ({ navigation }) => {
   const { restaurants, isLoading } = useContext(RestaurantsContext);
@@ -35,6 +36,7 @@ export const RestaurantsScreen = ({ navigation }) => {
       {isToggled && (
         <FavoritesBar favorites={favorites} onNavigate={navigation.navigate} />
       )}
+
       <RestaurantList
         data={restaurants}
         renderItem={({ item }) => {
@@ -44,7 +46,9 @@ export const RestaurantsScreen = ({ navigation }) => {
                 navigation.navigate("RestaurantDetail", { restaurant: item })
               }
             >
-              <RestaurantInfoCard restaurant={item} />
+              <FadeInView>
+                <RestaurantInfoCard restaurant={item} />
+              </FadeInView>
             </TouchableOpacity>
           );
         }}
